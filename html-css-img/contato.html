@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bolicho - Contato</title>
+    <link rel="stylesheet" href="contato.css">
+    <script>
+        function enviarParaWhatsApp(event) {
+            event.preventDefault();                // Evitar o envio padrão do formulário
+
+      // Coleta os dados do formulário
+            const nome = document.getElementById('nome').value;
+            const email = document.getElementById('email').value;
+            const mensagem = document.getElementById('mensagem').value;
+
+    //Colocar mensagem
+            const mensagemWhatsApp = `Nome: ${nome}%0AEmail: ${email}%0AMensagem: ${mensagem}`;
+
+    //Meu número
+            const numeroWhatsApp = '519983332358';
+
+    //Adicionar mensagem
+            const linkWhatsApp = `https://wa.me/${519983332358}?text=${mensagemWhatsApp}`;
+
+    //Pra abrir link em uma nova aba
+            window.open(linkWhatsApp, '_blank');
+        }
+
+        //const = var com escopo de bloco e cujo valor não pode ser reatribuído
+        //let = var que pode ser reatribuida
+        //var = variavel com escopo de função geral
+
+        //let nome = 'Diogo';  string
+        //let idade = 20;  number
+        //let isAtivo = true;  boolean
+        //let pessoa = null;  null
+        //let nada;  undefined
+    </script>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="sobre.html">Sobre o Bolicho</a></li>
+            <li><a href="osso.html">Jogo do Osso</a></li>
+            <li><a href="contato.html" class="active">Contato</a></li>
+        </ul>
+    </nav>
+    <h1>Contato</h1>
+    <form onsubmit="enviarParaWhatsApp(event)">
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome" required><br><br>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required><br><br>
+        <label for="mensagem">Mensagem:</label><br>
+        <textarea id="mensagem" name="mensagem" rows="4" cols="50" required></textarea><br><br>
+        <input type="submit" value="Enviar">
+    </form>
+
+    <footer>
+        <p>&copy; 2024 Diogo. Todos os direitos reservados.</p>
+        <p><a href="contato.html">Contato</a> | <a href="sobre.html">Sobre</a></p>
+    </footer>
+</body>
+</html>
+
